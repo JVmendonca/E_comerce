@@ -1,10 +1,15 @@
+from typing import Any
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views import View
+from django.http import HttpResponse
+from . import models
 
 
 class ListaProdutos(ListView):
-    pass
+    model = models.Produto
+    template_name = 'produto/lista.html'
+    context_object_name = 'produtos'
 
 class DetalheProduto(View):
     pass
