@@ -12,7 +12,7 @@
 }
 
 .border-top-light-custom{
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 1px solid rgba(255, 255, 255, 0);
 }
 
 @media (min-width: 34em) {
