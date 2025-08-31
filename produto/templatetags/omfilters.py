@@ -13,3 +13,8 @@ def formata_preco(val):
 def cart_total_qtd(carrinho):
     """Calcula o total do carrinho."""
     return utils.cart_total_qtd(carrinho)
+
+@register.filter
+def cart_totals(carrinho):
+    """Calcula o total do carrinho."""
+    return utils.cart_totals(carrinho)

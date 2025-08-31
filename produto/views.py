@@ -165,6 +165,6 @@ class RemoverDoCarrinho(View):
         return redirect(http_referer or reverse('produto:carrinho'))
  
  
-class Finalizar(View):
+class ResumoDaCompra(View):
    def get(self, *args, **kwarg):
       return HttpResponse('Finalizar') 

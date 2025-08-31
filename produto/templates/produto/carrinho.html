@@ -39,13 +39,11 @@
                     </td>
                     <td>{{linha.variacao_nome}}</td>
                     <td>
-                        
-                        {{linha.quantidade}}x
+                        {{linha.quantidade}} x
                         {%if linha.preco_unitario_promocional%}
-                        {{linha.preco_unitario_promocional| formata_preco}}
-                        
+                        {{linha.preco_unitario_promocional}}
                         {% else %}
-                        {{linha.unitario| formata_preco}}
+                        {{linha.preco_unitario }}
                         {% endif %}
                 
                     </td>
@@ -74,7 +72,7 @@
             <table class="table">
                 <tr>
                     <td class="font-weight-bold">Total</td>
-                    <td>R$100000</td>
+                    <td>{{carrinho|cart_totals|formata_preco}}</td>
                 </tr>
             </table>
         </div>
