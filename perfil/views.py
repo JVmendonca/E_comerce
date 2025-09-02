@@ -50,6 +50,7 @@ class BasePerfil(View):
 class Criar(BasePerfil):
     def post(self, *args, **kwargs):
         if not self.userform.is_valid() or not self.perfilform.is_valid():
+            messages.error(self.request, 'Dados inválidos')
             return self.renderizar
         
         username = self.userform.cleaned_data.get('username')
