@@ -2,36 +2,68 @@
 {% load crispy_forms_tags %}
 
 {% block conteudo %}
-
 <div class="row">
-    {%if not request.user.is_authenticated %}
-    <div class="col-lg">
-        <h1>Login</h1>
+    {% if not request.user.is_authenticated %}
+    <!-- Coluna Esquerda - Login -->
+    <div class="col-md-6 mt-3">
+        
+        <h4>Login</h4>
+        <p>Se você já possui cadastro, efetue o login abaixo.</p>
+
+        <form method="POST" action="{% url 'perfil:login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="InputUsuariol">Usuário</label>
+                <input 
+                    type="text" 
+                    name="username" 
+                    class="form-control" 
+                    id="InputUsuariol"
+                    aria-describedby="usuarioHelp" 
+                    placeholder="Digite seu usuário"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPasswordl">Senha</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    class="form-control" 
+                    id="exampleInputPasswordl" 
+                    placeholder="Digite sua senha"
+                >
+            </div>
+
+            <button 
+                type="submit" 
+                class="btn btn-primary btn-block btn-lg"
+            >
+                Entrar
+            </button>
+        </form>
     </div>
     {% endif %}
 
-
-    <div class="col-lg">
-        {%block titulocadastro%}
-        <h1>Cadastro</h1>
-        {%endblock%}
+    <!-- Coluna Direita - Cadastro -->
+    <div class="col-md-6 mt-3">
+        {% block titulocadastro %}
+        <h4>Cadastro</h4>
+        <p>Se você ainda não possui cadastro, efetue o cadastro abaixo.</p>
+        {% endblock %}
 
         <form method="POST" action="">
             {% csrf_token %}
-            {{userform|crispy}}
-            {{perfilform|crispy}}
+            {{ userform|crispy }}
+            {{ perfilform|crispy }}
 
-            <div class="row">
-                <div class="col-lg">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">
-                        Enviar
-                    </button>
-
+            <button 
+                type="submit" 
+                class="btn btn-primary btn-block btn-lg"
+            >
+                Enviar
+            </button>
         </form>
     </div>
 </div>
-
-
-
 {% endblock %}
-
