@@ -59,10 +59,10 @@ class Perfil(models.Model):
        if not valida_cpf(self.cpf):
            mensagem_erro['cpf'] = 'CPF inválido'
        
-       if not re.search(r'[^0-9]', self.cep) or len(self.cep) != 8:
-           mensagem_erro['cep'] = 'CEP inválido, digite 8 digitos do cep'
+       if not re.fullmatch(r'\d{8}', self.cep):
+          mensagem_erro['cep'] = 'CEP inválido, digite exatamente 8 dígitos numéricos.'
        if mensagem_erro:
-           raise ValidationError(mensagem_erro)
+            raise ValidationError(mensagem_erro)
 
     class Meta:
         verbose_name = 'Perfil'
