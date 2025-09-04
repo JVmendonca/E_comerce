@@ -10,13 +10,16 @@ class Pedido(models.Model):
         max_length=1,
         choices=(
             ('A', 'Aprovado'),
-            ('c', 'criado'),
+            ('C', 'criado'),
             ('r', 'reprovado'),
             ('p', 'pendente'),
             ('e', 'enviado'),
             ('f', 'realizado'),
         )
     )
+
+    def __str__(self):
+        return f'Pedido N. {self.pk}'
 
 
 class ItemPedido(models.Model):
