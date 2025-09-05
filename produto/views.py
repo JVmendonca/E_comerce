@@ -15,6 +15,7 @@ class ListaProdutos(ListView):
    template_name = 'produto/lista.html'
    context_object_name = 'produtos'
    paginate_by = 3
+#    ordering = ['-id'] caso queira ordenar para o ultimo produto add
  
  
 class DetalheProduto(DetailView):

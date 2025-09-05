@@ -121,9 +121,16 @@ class SalvarPedido(View):
             )
         )
 
-class detalhe(View):
-    pass
+class Detalhe(DispatchLoginRequired, DetailView):
+    model = Pedido
+    context_object_name = 'pedido'
+    template_name = 'pedido/detalhe.html'
+    pk_url_kwarg = 'pk'
 
-class Lista(View):
-    pass
-    
+
+class Lista(DispatchLoginRequired, ListView):
+    model = Pedido
+    context_object_name = 'pedidos'
+    template_name = 'pedido/lista.html'
+    paginate_by = 10
+    ordering = ['-id']
