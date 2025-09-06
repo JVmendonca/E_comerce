@@ -2,6 +2,8 @@
 {%load omfilters%}
 {%load static%}
 
+{% block titulo %}{{pedido | }}{% endblock %}
+
 {%block conteudo%}
 
 {% include "parciais/pedido.html" %}

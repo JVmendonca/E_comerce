@@ -2,6 +2,9 @@
 {%load omfilters%}
 {%load static%}
 {%block conteudo%}
+
+{% block titulo %}pagamento | {% endblock %}
+
   <div class="row">
             <div class="col">
                 <h3>Escolha o método de pagamento</h3>
@@ -10,7 +13,7 @@
         </div>
 
  
-        {% include "parciais/_pedido.html" %}
+        {% include "parciais/pedido.html" %}
 
 <div class="row mt-4">
     <div class="col">

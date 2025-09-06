@@ -47,8 +47,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     
 
-    #todo: remover debug_toolbar
-    'debug_toolbar',
 ]
 
 
@@ -68,10 +66,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     
-
-
-    #todo: remover debug_toolbar
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'loja.urls'
@@ -163,11 +157,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 120
 #salva cada requisição
 SESION_SAVE_EVERY_REQUEST = False
 
-INTERNAL_IPS = [
-    #...
-    '127.0.0.1'
-    #...
-]
+
 
 
 
