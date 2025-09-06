@@ -56,6 +56,15 @@ class Perfil(models.Model):
     def clean(self):
        mensagem_erro = {}
 
+       cpf_enviado = self.cpf or None
+       cpf_salvo = None
+       perfil = Perfil.objects.filter(cpf=cpf_enviado).first()
+
+       if cpf_salvo is not None and cpf_salvo.pk != self.pk:
+           mensagem_erro['cpf'] = 'CPF ja cadastrado'
+
+
+
        if not valida_cpf(self.cpf):
            mensagem_erro['cpf'] = 'CPF inválido'
        
