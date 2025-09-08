@@ -1,10 +1,14 @@
+{% load static %}
+
 <!doctype html>
 <html lang="pt-br">
 
 <head>
     {% include 'parciais/_head.html' %}
    
-    <title>{% block titulo %}{% endblock %}Otica Gireh!</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+
+    <title>{% block titulo %}{% endblock %} | Ótica Girêh |</title>
 </head>
 
 <body>

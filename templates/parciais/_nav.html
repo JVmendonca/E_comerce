@@ -3,7 +3,7 @@
 
 <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
     <a class="navbar-brand" href="{% url 'produto:lista' %}" style="position:relative; display:inline-block;">
-        Ótica Girêh
+        <span class="logo-text">Ótica Girêh</span>
         <img src="{% static 'img/logogireh.png' %}" alt="Logo" 
              style="position:absolute; top:50%; transform:translateY(-50%); left:110%; height:100px;">
         <style>
@@ -11,6 +11,17 @@
                 font-weight: bold;
                 font-size: 1.8rem;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            /* Estilo para a logo com efeito hover */
+            .logo-text {
+                color: white; /* cor normal */
+                transition: color 0.3s ease; /* suaviza a transição */
+            }
+
+            .navbar-brand:hover .logo-text {
+                color: blue; /* cor quando o mouse passa por cima */
+                cursor: pointer; /* opcional, deixa parecer clicável */
             }
         </style>
     </a>
@@ -59,7 +70,7 @@
             {% endif %}
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'produto:busca' %}">
-            <input name = "termo" value="{{request.GET.termo}}" class="form-control mr-sm-2" type="search" placeholder="Busca" aria-label="Busca">
+            <input name="termo" value="{{request.GET.termo}}" class="form-control mr-sm-2" type="search" placeholder="Busca" aria-label="Busca">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
         </form>
     </div>
