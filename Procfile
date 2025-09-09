@@ -1,1 +1,1 @@
-web: gunicorn loja.wsgi:application
+gunicorn --chdir "OneDrive/Área de Trabalho/E-Comerce" loja.wsgi:application
