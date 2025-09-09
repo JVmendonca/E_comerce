@@ -1,1 +1,1 @@
-web: gunicorn Área de Trabalho\E-Comerce.wsgi
+web: gunicorn loja.wsgi:application
